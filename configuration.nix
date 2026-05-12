@@ -87,6 +87,7 @@
 
 	services.gvfs.enable = true;
 
+	xdg.portal.enable = true;
 	services.flatpak.enable = true;
 
 	nix.settings = {
