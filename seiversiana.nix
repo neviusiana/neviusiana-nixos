@@ -49,6 +49,7 @@ in {
 
 			# gaming
 			retroarch-full
+			xclicker
 
 			# others
 			rsync
