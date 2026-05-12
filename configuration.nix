@@ -87,7 +87,12 @@
 
 	services.gvfs.enable = true;
 
-	xdg.portal.enable = true;
+	xdg.portal = {
+		enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+		config.common.default = "gtk";
+	}
+
 	services.flatpak.enable = true;
 
 	nix.settings = {
