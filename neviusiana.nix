@@ -269,6 +269,13 @@ in {
 
 	services.mpd-discord-rpc.enable = true;
 
+	services.flatpak = {
+		update.onActivation = true;
+		packages = [
+			"org.vinegarhq.Sober"
+		];
+	};
+
 	programs.rmpc.enable = true;
 
 	programs.feh.enable = true;
