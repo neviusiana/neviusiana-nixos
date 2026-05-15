@@ -3,6 +3,7 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		nix-flatpak.url = "github:gmodena/nix-flatpak";
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -17,10 +18,11 @@
 		};
 	};
 
-	outputs = inputs@{ nixpkgs, home-manager, nur, aagl, ... }: {
+	outputs = inputs@{ nixpkgs, nix-flatpak, home-manager, nur, aagl, ... }: {
 		nixosConfigurations.neviusiana-nixos = nixpkgs.lib.nixosSystem {
 			modules = [
 				./configuration.nix
+				nix-flatpak.nixosModules.nix-flatpak
 				home-manager.nixosModules.home-manager {
 					home-manager = {
 						backupFileExtension = "backup";
